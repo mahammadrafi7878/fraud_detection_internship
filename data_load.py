@@ -1,14 +1,17 @@
 import pandas as pd
-folder=['/config/workspace/fraud_detection1.csv',
-      '/config/workspace/fraud_detection2.csv',
-      '/config/workspace/fraud_detection3.csv',
-      '/config/workspace/fraud_detection4.csv',
-      '/config/workspace/fraud_detection5.csv',
-      '/config/workspace/fraud_detection6.csv',
-      '/config/workspace/fraud_detection7.csv',
-      '/config/workspace/fraud_detection8.csv',
-      '/config/workspace/fraud_detection9.csv'] 
 
+import os 
+import re
+data=os.listdir()
+
+folder=[]
+for i in data:
+    result=re.findall("csv$", i)
+    if result:
+        folder.append(i)
+
+if 'total_data.csv' in folder:
+    folder.remove('total_data.csv')
 
 data=[]
 for file in folder:

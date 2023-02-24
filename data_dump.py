@@ -10,10 +10,12 @@ DATA_FILE_PATH= "/config/workspace/total_data.csv"
 
 
 def drop_index_column(data):
-    if 'Unnamed: 0' in data.columns:
-        data.drop("Unnamed: 0",axis=1,inplace=True)
-    return data  
+    if 'Unnamed: 0.1' in data.columns:
+        data.drop('Unnamed: 0.1',axis=1,inplace=True)
+    if  'Unnamed: 0' in data.columns:
+        data.drop( 'Unnamed: 0',axis=1,inplace=True)
 
+    return data
 
 
 df=pd.read_csv(DATA_FILE_PATH)
