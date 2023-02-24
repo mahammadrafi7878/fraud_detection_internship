@@ -6,7 +6,7 @@ client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
 
 DATABASE_NAME='fraud_detection'
 COLLECTION_NAME="predicting_fraud"
-DATA_FILE_PATH= "/config/workspace/fraud_detection_dataset.csv"
+DATA_FILE_PATH= "/config/workspace/total_data.csv"
 
 
 def drop_index_column(data):
