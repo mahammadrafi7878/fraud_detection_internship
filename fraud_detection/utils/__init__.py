@@ -4,6 +4,8 @@ from fraud_detection.config import mongo_db
 import pandas as pd 
 import numpy as np 
 import os,sys 
+import yaml 
+import dill 
 
 
 def get_collection_as_dataframe(database_name:str,collection_name):
@@ -13,5 +15,17 @@ def get_collection_as_dataframe(database_name:str,collection_name):
             df.drop('_id',axis=1,inplace=True)
         df.drop_duplicates(inplace=True)
         return df
+    except Exception as e:
+        raise FraudException(e, sys)
+
+
+def write_yaml_file(file_path,data):
+    try:
+        file_dir=os.path.dirname(file_path)
+        os.makedirs(file_dir,exist_ok=True)
+
+        with open(file_path,'w') as file:
+            yaml.dump(data,file_path)
+        
     except Exception as e:
         raise FraudException(e, sys)
