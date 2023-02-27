@@ -6,6 +6,7 @@ from fraud_detection.entity import config_entity
 import pandas as pd 
 import numpy as np 
 import os,sys  
+from fraud_detection.components.data_validation import DataValidation
 
 
 print(__name__)
@@ -17,6 +18,14 @@ if __name__ =='__main__':
         data_ingestion = DataIngestion(data_ingestion_config=data_ingestion_config)
         print(data_ingestion.initiate_data_ingestion())
         data_ingestion_artifact = data_ingestion.initiate_data_ingestion()
+
+
+
+        data_validation_config = config_entity.DataValidationConfig(training_pipeline_config=training_pipeline_config)
+        data_validation = DataValidation(data_validation_config=data_validation_config,
+                         data_ingestion_artifact=data_ingestion_artifact)
+
+        data_validation_artifact = data_validation.initiate_data_validation()
     except Exception as e:
         raise FraudException(e,sys)
     

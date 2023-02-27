@@ -14,4 +14,3 @@ object=EnvironmentVariable()
 mongo_db=pymongo.MongoClient(object.mongo_db_url)  
 
 
-TARGET_COLUMN='TX_FRAUD_SCENARIO'

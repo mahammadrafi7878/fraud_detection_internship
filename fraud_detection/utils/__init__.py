@@ -25,7 +25,17 @@ def write_yaml_file(file_path,data):
         os.makedirs(file_dir,exist_ok=True)
 
         with open(file_path,'w') as file:
-            yaml.dump(data,file_path)
+            yaml.dump(data,file)
         
+    except Exception as e:
+        raise FraudException(e, sys)  
+
+
+def convert_columns_float(df,exclude_columns):
+    try:
+        for col in df.columns:
+            if col not in exclude_columns:
+                df[col]=df[col].astype(float)
+        return df
     except Exception as e:
         raise FraudException(e, sys)
