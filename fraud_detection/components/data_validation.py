@@ -129,7 +129,6 @@ class DataValidation:
 
 
 
-
     def initiate_data_validation(self):
         try:
             base_df=pd.read_csv(self.data_validation_config.base_file_path)
