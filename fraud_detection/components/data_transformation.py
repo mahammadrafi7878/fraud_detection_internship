@@ -59,7 +59,7 @@ class DataTransformation:
             target_feature_test_df=test_df[TARGET_COLUMN]
 
             transformation_pipeline=DataTransformation.get_data_transformer_object()
-            transformation_pipeline.fit(target_feature_train_df)
+            transformation_pipeline.fit(input_feature_train_df)
 
 
             input_feature_train_arr=transformation_pipeline.transform(input_feature_train_df)
