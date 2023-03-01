@@ -1,15 +1,5 @@
-import os 
-import re
-data=os.listdir()
+import pandas as pd 
+import numpy as np 
 
-folder=[]
-for i in data:
-    result=re.findall("csv$", i)
-    if result:
-        folder.append(i)
-
-if 'total_data.csv' in folder:
-    folder.remove('total_data.csv')
-
-
-print(folder)
+df=pd.read_csv('/config/workspace/artifacts/01032023__194851/data_ingestion/dataset/train.csv')
+print(df.dtypes)

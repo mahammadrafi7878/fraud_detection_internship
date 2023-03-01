@@ -1,47 +1,52 @@
-from fraud_detection.exception import FraudException
 import pandas as pd
+import numpy as ns 
+from datetime import datetime
+
+TX_DATETIME='TX_DATETIME'
 
 
-def is_weekend(tx_datetime):
+def is_weekend(df,variable):
     try:
-        weekday=tx_datetime.weekday()
-        is_weeekend = weekday>=5
-        return int(is_weeekend)
+        for i in range(len(df[variable])):
+           week=df[variable][i].weekday()
+        if int(week) >5:
+            return 1
+        else:
+            return 0
     except Exception as e:
-        raise FraudException(e, sys)
+        raise FraudException(e, sys) 
 
-
-def transferd_datetime(df:pd.DataFrame):
+def is_week(df):
     try:
-        df['TX_DURING_WEEKEND']=df['TX_DATETIME'].apply(is_weekend)
-        return df 
+        df['TX_DURING_WEEKEND']=is_weekend(df,TX_DATETIME)
+        return df
+        
     except Exception as e:
-        raise FraudException(e, sys)
+        raise FraudException(e,sys)
 
 
-    
-def is_night(df:pd.DataFrame,variable:str):
+        
+def is_night(df,variable):
     try:
         for i in range(len(df[variable])):
             hour=df[variable][i].hour
-            if hour<=6:
-                return 1
-            else:
-                return 0
+        if int(hour)<=6:
+            return 1
+        else:
+            return 0
     except Exception as e:
         raise FraudException(e, sys)
 
-
-
-def transformed_day(df:pd.DataFrame):
+def is_day(df):
     try:
-        df['TX_DURING_NIGHT']=is_night(df,'TX_DATETIME')
+        df['TX_DURING_NIGHT']=is_night(df,TX_DATETIME) 
         return df 
     except Exception as e:
-        raise FraudException(e, sys)    
+        raise FraudException(e,sys)
 
 
-    
+
+        
 def get_customer_spending_behaviour_features(customer_transactions,window_sizes_in_days=[1,7,30]):
     try:
         customer_transactions=customer_transactions.sort_values('TX_DATETIME')
@@ -54,23 +59,13 @@ def get_customer_spending_behaviour_features(customer_transactions,window_sizes_
         
             customer_transactions['COUSTOMER_ID_NB_TX_'+str(window_size)+'DAY_WINDOW']=list(NB_TX_WINDOW)
             customer_transactions['COUSTOMER_ID_AVG_AMOUNT_TX_'+str(window_size)+'DAY_WINDOW']=list(AVG_AMOUNT_TX_WINDOW)
-        customer_transactions.index=customer_transactions.TRANSACTION_ID
+            customer_transactions.index=customer_transactions.TRANSACTION_ID
     
         return customer_transactions
     except Exception as e:
         raise FraudException(e, sys)
 
-def customer_features(df:pd.DataFrame):
-    try:
-        df=df.groupby('CUSTOMER_ID').apply(lambda x: get_customer_spending_behaviour_features(x,window_sizes_in_days=[1,7,30]))
-        df=train_df.sort_values('TX_DATETIME').reset_index(drop=True)
-        return df
-    except Exception as e:
-        raise FraudException(e, sys) 
-
-
-
-
+    
 def get_count_risk_rolling_window(terminal_transactions,delay_period,windows_sizes_in_days=[1,7,30]):
     try:
         terminal_transactions=terminal_transactions.sort_values('TX_DATETIME')
@@ -98,18 +93,4 @@ def get_count_risk_rolling_window(terminal_transactions,delay_period,windows_siz
     except Exception as e:
         raise FraudException(e, sys) 
 
-
-def get_transaction(df:pd.DataFrame):
-    try:
-        df=df.groupby('TERMINAL_ID').apply(lambda x:get_count_risk_rolling_window(x, delay_period=7, windows_sizes_in_days=[1,7,30]))
-        df=train_df.sort_values('TX_DATETIME').reset_index(drop=True)
-        return df
-    except Exception as e:
-        raise FraudException(e, sys)
-    
-def reset_index(df:pd.DataFrame):
-    try:
-        df=df.reset_index(inplace=False)
-        return df
-    except Exception as e:
-        raise FraudException(e, sys) 
+ 
