@@ -74,27 +74,25 @@ class DataTransformation:
             input_test=test_df
 
             transformation_pipeline=self.get_data_transformation(input_train=input_train, input_test=input_test)
+            input_train_arr,input_test_arr=transformation_pipeline
 
 
-            input_train=train_df.drop("TX_FRAUD",axis=1)
 
-            input_test=test_df.drop("TX_FRAUD",axis=1)
-
-            input_train=input_train.drop('TX_DATETIME',axis=1)
-            input_test=input_test.drop('TX_DATETIME',axis=1)
+            input_train_arr=input_train_arr.drop('TX_DATETIME',axis=1)
+            input_test_arr=input_test_arr.drop('TX_DATETIME',axis=1)
 
 
 
             smt=SMOTETomek(sampling_strategy="minority")
             smt=SMOTETomek(random_state=77)
 
-            input_train,target_train=smt.fit_resample(input_train,target_train)
+            input_train_arr,target_train=smt.fit_resample(input_train_arr,target_train)
 
-            input_test,target_test=smt.fit_resample(input_test,target_test)
+            input_test_arr,target_test=smt.fit_resample(input_test_arr,target_test)
 
 
-            train_arr=np.c_[input_train,target_train]
-            test_arr=np.c_[input_test,target_test]
+            train_arr=np.c_[input_train_arr,target_train]
+            test_arr=np.c_[input_test_arr,target_test]
 
 
             utils.save_numpy_array_data(file_path=self.data_transformation_config.transformed_train_path, array=train_arr)
