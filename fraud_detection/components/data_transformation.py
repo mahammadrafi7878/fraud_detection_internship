@@ -80,6 +80,16 @@ class DataTransformation:
 
             input_train_arr=input_train_arr.drop('TX_DATETIME',axis=1)
             input_test_arr=input_test_arr.drop('TX_DATETIME',axis=1)
+            print(input_train_arr.dtypes)
+
+            input_train_arr['NEW_TX_FRAUD']=input_train_arr['TX_FRAUD'].astype('int')
+            input_test_arr['NEW_TX_FRAUD']=input_test_arr['TX_FRAUD'].astype('int')
+
+            input_train_arr.drop(['TX_FRAUD','TRANSACTION_ID','CUSTOMER_ID','TERMINAL_ID','TX_TIME_SECONDS','TX_TIME_DAYS','TX_FRAUD_SCENARIO'],axis=1,inplace=True)
+            input_test_arr.drop(['TX_FRAUD','TRANSACTION_ID','CUSTOMER_ID','TERMINAL_ID','TX_TIME_SECONDS','TX_TIME_DAYS','TX_FRAUD_SCENARIO'],axis=1,inplace=True)
+            print(input_train_arr.dtypes)
+
+            
 
 
 

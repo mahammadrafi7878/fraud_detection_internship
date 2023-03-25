@@ -1,0 +1,8 @@
+[2023-03-25 11:27:07,888] 16 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL TRAINER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2023-03-25 11:27:07,889] 35 root _ INFO _ loading train arrayt and test array
+[2023-03-25 11:27:08,050] 47 root _ INFO _  spliting inputr and target features in both test and train array
+[2023-03-25 11:27:08,054] 53 root _ INFO _ train the modelk
+[2023-03-25 11:27:26,576] 56 root _ INFO _ calculating f1 score for train data
+[2023-03-25 11:27:27,261] 60 root _ INFO _ calculating f1 score for test data
+[2023-03-25 11:27:27,622] 65 root _ INFO _ f1_train_score:0.4916714110725808  and f1_test_score is : 0.2558393784164747
+[2023-03-25 11:27:27,623] 68 root _ INFO _ checking our model is underfitting or overfitting or goood model

@@ -1,0 +1,20 @@
+[2023-03-25 14:11:10,237] 17 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL TRAINER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2023-03-25 14:11:10,238] 36 root _ INFO _ loading train arrayt and test array
+[2023-03-25 14:11:10,356] 48 root _ INFO _  spliting inputr and target features in both test and train array
+[2023-03-25 14:11:10,360] 54 root _ INFO _ train the modelk
+[2023-03-25 14:11:27,721] 57 root _ INFO _ calculating f1 score for train data
+[2023-03-25 14:11:28,352] 61 root _ INFO _ calculating f1 score for test data
+[2023-03-25 14:11:28,628] 66 root _ INFO _ f1_train_score:0.9999670467277401  and f1_test_score is : 0.9248768661087652
+[2023-03-25 14:11:28,628] 69 root _ INFO _ checking our model is underfitting or overfitting or goood model
+[2023-03-25 14:11:28,629] 74 root _ INFO _ checking our model is overfitting or not
+[2023-03-25 14:11:28,629] 80 root _ INFO _ savinbg the model oibject 
+[2023-03-25 14:11:28,645] 83 root _ INFO _ preparing the model trainer artifact
+[2023-03-25 14:11:28,646] 87 root _ INFO _ model trainer artifact :ModelTrainerArtifact(model_path='/config/workspace/artifacts/25032023__134926/model_trainer/model/model.pkl', f1_train_score=0.9999670467277401, f1_test_score=0.9248768661087652) 
+[2023-03-25 14:11:28,648] 20 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL EVALUATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2023-03-25 14:11:28,649] 36 root _ INFO _ Model evaluation artifact: ModelEvaluationArtifact(is_model_accepted=True, improved_accuracy=None)
+[2023-03-25 14:11:28,649] 20 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL PUSHER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2023-03-25 14:11:28,650] 31 root _ INFO _ loading transformer and model
+[2023-03-25 14:11:28,951] 35 root _ INFO _ saving the model into pusher directory
+[2023-03-25 14:11:34,728] 40 root _ INFO _ saving the model in saved model directory
+[2023-03-25 14:11:40,793] 48 root _ INFO _ preparing model pusher artifact
+[2023-03-25 14:11:40,794] 52 root _ INFO _ model pusher artifact : ModelPusherArtifact(pusher_model_dir='/config/workspace/artifacts/25032023__134926/model_pusher/saved_models', saved_model_dir='saved_models')

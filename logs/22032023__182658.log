@@ -1,3 +1,0 @@
-[2023-03-22 18:32:32,006] 16 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL TRAINER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-[2023-03-22 18:32:32,006] 36 root _ INFO _ loading train arrayt and test array
-[2023-03-22 18:32:33,061] 45 root _ INFO _  spliting inputr and target features in both test and train array

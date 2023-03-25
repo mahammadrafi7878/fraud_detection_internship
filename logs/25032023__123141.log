@@ -1,0 +1,12 @@
+[2023-03-25 12:53:34,384] 19 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL TRAINER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2023-03-25 12:53:34,385] 38 root _ INFO _ loading train arrayt and test array
+[2023-03-25 12:53:34,536] 50 root _ INFO _  spliting inputr and target features in both test and train array
+[2023-03-25 12:53:34,540] 56 root _ INFO _ train the modelk
+[2023-03-25 12:56:42,372] 59 root _ INFO _ calculating f1 score for train data
+[2023-03-25 12:56:43,066] 63 root _ INFO _ calculating f1 score for test data
+[2023-03-25 12:56:43,408] 68 root _ INFO _ f1_train_score:0.9947894400971482  and f1_test_score is : 0.9717552549222541
+[2023-03-25 12:56:43,408] 71 root _ INFO _ checking our model is underfitting or overfitting or goood model
+[2023-03-25 12:56:43,408] 76 root _ INFO _ checking our model is overfitting or not
+[2023-03-25 12:56:43,408] 82 root _ INFO _ savinbg the model oibject 
+[2023-03-25 12:56:43,427] 85 root _ INFO _ preparing the model trainer artifact
+[2023-03-25 12:56:43,428] 89 root _ INFO _ model trainer artifact :ModelTrainerArtifact(model_path='/config/workspace/artifacts/25032023__123146/model_trainer/model/model.pkl', f1_train_score=0.9947894400971482, f1_test_score=0.9717552549222541) 

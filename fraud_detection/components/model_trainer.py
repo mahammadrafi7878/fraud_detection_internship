@@ -4,9 +4,10 @@ from fraud_detection.logger import logging
 from typing import Optional 
 import os,sys 
 from fraud_detection import utils 
-from sklearn.ensemble import RandomForestClassifier 
-from sklearn.metrics import f1_score 
-from fraud_detection.config import output_feature,input_features
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import f1_score
+ 
+
 import pandas as pd
 
 
@@ -23,31 +24,32 @@ class ModelTrainer:
 
     def train_model(self,x,y):
         try:
-            logging.info(f"creating a function  for model building")
-            rf=RandomForestClassifier()
-            rf.fit(x,y)
-            return rf
-        except Exception as e:
-            raise FraudException(e,sys)
+            clf=DecisionTreeClassifier()
+            clf.fit(x,y)
+            return clf 
 
+        except Exception as e:
+            raise FraudException(e, sys)
 
     def initiate_model_trainer(self):
         try:
             logging.info(f"loading train arrayt and test array")
             train_arr=utils.load_numpy_array_data(file_path=self.data_transformation_artifact.transformed_train_path)
+
+            
+
+            
             test_arr=utils.load_numpy_array_data(file_path=self.data_transformation_artifact.transformed_test_path)
             
-            train_arr=pd.DataFrame(train_arr)
-            test_arr=pd.DataFrame(test_arr)
 
-            logging.info(f"{train_arr.columns}")
-            logging.info(f"{test_arr.columns}")
 
 
             
             logging.info(f" spliting inputr and target features in both test and train array")
-            x_train,y_train=train_arr[[input_features]],train_arr['TX_FRAUD']
-            x_test,y_test=test_arr[[input_features]],test_arr['TX_FRAUD']
+            
+
+            x_train,y_train=train_arr[:,:-1],train_arr[:,-1].astype('int')
+            x_test,y_test=test_arr[:,:-1],test_arr[:,-1].astype('int')
 
             logging.info(f"train the modelk")
             model=self.train_model(x=x_train,y=y_train) 
