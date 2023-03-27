@@ -8,7 +8,7 @@ load_dotenv
 @dataclass
 
 class EnvironmentVariable:
-    mongo_db_url=os.getenv("MONGO_DB_URL") 
+    mongo_db_url:str = os.getenv("MONGO_DB_URL")
 
 object=EnvironmentVariable()
 mongo_db=pymongo.MongoClient(object.mongo_db_url)  

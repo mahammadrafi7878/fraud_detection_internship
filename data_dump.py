@@ -2,7 +2,12 @@ import pymongo
 import pandas as pd
 import json
 
-client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
+
+from dotenv import load_dotenv
+print(f"loading environment variable")
+
+client = pymongo.MongoClient("mongodb+srv://shaikmahammadrafi:6302593782@cluster1.zjnuzoq.mongodb.net/?retryWrites=true&w=majority") 
+load_dotenv()
 
 DATABASE_NAME='fraud_detection'
 COLLECTION_NAME="predicting_fraud"
