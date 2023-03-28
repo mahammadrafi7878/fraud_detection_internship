@@ -11,7 +11,7 @@ with DAG(
     'Fraud Transaction Detecytion',
     default_args={'retries': 2},
     # [END default_args]
-    description='Fraud_Transaction_Detection',
+    description='Fraud Transaction Detection',
     schedule_interval="@weekly",
     start_date=pendulum.datetime(2023, 3, 20, tz="UTC"),
     catchup=False,
