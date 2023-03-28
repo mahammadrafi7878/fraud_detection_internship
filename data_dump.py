@@ -2,11 +2,11 @@ import pymongo
 import pandas as pd
 import json
 
-
+from fraud_detection.config import mongo_db
 from dotenv import load_dotenv
 print(f"loading environment variable")
 
-client = pymongo.MongoClient("mongodb+srv://shaikmahammadrafi:6302593782@cluster1.zjnuzoq.mongodb.net/?retryWrites=true&w=majority") 
+
 load_dotenv()
 
 DATABASE_NAME='fraud_detection'
@@ -33,4 +33,4 @@ print(f"df.columns after droping index column {df.columns}")
 json_records=list(json.loads(df.T.to_json()).values())
 print(json_records[0])
 
-client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_records)
+mongo_db[DATABASE_NAME][COLLECTION_NAME].insert_many(json_records)

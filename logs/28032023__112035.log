@@ -1,0 +1,9 @@
+[2023-03-28 11:20:36,958] 15 root _ INFO _ Creating model resolver object
+[2023-03-28 11:20:36,959] 17 root _ INFO _ Reading file :/config/workspace/large_fraud_data11.csv
+[2023-03-28 11:20:37,631] 27 root _ INFO _ Loading transformer to transform dataset
+[2023-03-28 11:20:37,693] 29 root _ INFO _ Creating a feature is transaction done in week or weekend
+[2023-03-28 11:20:43,533] 55 root _ INFO _ Creating a feature with treansaction done in day or night
+[2023-03-28 11:20:48,994] 93 root _ INFO _ Using Customer id feature creating three more features 
+[2023-03-28 11:21:20,468] 136 root _ INFO _ Using terminal id creating three more features
+[2023-03-28 11:22:36,415] 151 root _ INFO _ After performning Feature Engineering dropping some columns
+[2023-03-28 11:22:36,468] 33 root _ INFO _ Loading model to make prediction

@@ -1,0 +1,118 @@
+[2023-03-28 11:05:52,055] 15 root _ INFO _ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-03-28 11:05:52,056] 23 root _ INFO _ Exporting collection data as pandas dataframe
+[2023-03-28 11:05:55,913] 25 root _ INFO _ replacing na values with np.NAN
+[2023-03-28 11:05:55,922] 28 root _ INFO _ Creating feature store path and directory if not available
+[2023-03-28 11:05:55,923] 32 root _ INFO _ storing data collections into feature store 
+[2023-03-28 11:05:57,296] 35 root _ INFO _ splitting train and test parts
+[2023-03-28 11:05:57,353] 38 root _ INFO _ making target variable at last  ,beacuse we need to perform feature engineering so cant divide3 input and output features for both test and train data 
+[2023-03-28 11:05:57,356] 43 root _ INFO _ making dataset dirctory to store train and test datasets
+[2023-03-28 11:05:57,356] 47 root _ INFO _ storing train data set in dataset directory
+[2023-03-28 11:05:58,421] 50 root _ INFO _ storing test dataset in dataset directory
+[2023-03-28 11:05:58,879] 53 root _ INFO _ Creating data ingestion artifact
+[2023-03-28 11:05:58,879] 59 root _ INFO _ returning data ingestion artifact
+[2023-03-28 11:05:58,948] 23 root _ INFO _ Exporting collection data as pandas dataframe
+[2023-03-28 11:06:02,743] 25 root _ INFO _ replacing na values with np.NAN
+[2023-03-28 11:06:02,753] 28 root _ INFO _ Creating feature store path and directory if not available
+[2023-03-28 11:06:02,753] 32 root _ INFO _ storing data collections into feature store 
+[2023-03-28 11:06:04,157] 35 root _ INFO _ splitting train and test parts
+[2023-03-28 11:06:04,215] 38 root _ INFO _ making target variable at last  ,beacuse we need to perform feature engineering so cant divide3 input and output features for both test and train data 
+[2023-03-28 11:06:04,218] 43 root _ INFO _ making dataset dirctory to store train and test datasets
+[2023-03-28 11:06:04,218] 47 root _ INFO _ storing train data set in dataset directory
+[2023-03-28 11:06:05,293] 50 root _ INFO _ storing test dataset in dataset directory
+[2023-03-28 11:06:05,751] 53 root _ INFO _ Creating data ingestion artifact
+[2023-03-28 11:06:05,751] 59 root _ INFO _ returning data ingestion artifact
+[2023-03-28 11:06:05,820] 18 root _ INFO _ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-03-28 11:06:05,820] 142 root _ INFO _ Reading base data frame
+[2023-03-28 11:06:06,206] 144 root _ INFO _ replacing na values with np.NAN
+[2023-03-28 11:06:06,271] 146 root _ INFO _ converting TX_DATETIME columns as object data type
+[2023-03-28 11:06:06,277] 149 root _ INFO _ Droping missing columns , which have missing values greater than threshold
+[2023-03-28 11:06:06,277] 31 root _ INFO _ Checking for highly missing values columns 
+[2023-03-28 11:06:06,335] 35 root _ INFO _ if data have high missing values greater than threshold dropping those columns
+[2023-03-28 11:06:06,350] 152 root _ INFO _ Reading train data set
+[2023-03-28 11:06:06,606] 154 root _ INFO _ converting TX_DATETIME columns as object data type
+[2023-03-28 11:06:06,611] 157 root _ INFO _ reading test data set
+[2023-03-28 11:06:06,863] 159 root _ INFO _ converting TX_DATETIME columns as object data type
+[2023-03-28 11:06:06,869] 162 root _ INFO _ droping highly missing value columns in train data set
+[2023-03-28 11:06:06,869] 31 root _ INFO _ Checking for highly missing values columns 
+[2023-03-28 11:06:06,912] 35 root _ INFO _ if data have high missing values greater than threshold dropping those columns
+[2023-03-28 11:06:06,922] 165 root _ INFO _ droping highly missing value columns in test data set
+[2023-03-28 11:06:06,922] 31 root _ INFO _ Checking for highly missing values columns 
+[2023-03-28 11:06:06,961] 35 root _ INFO _ if data have high missing values greater than threshold dropping those columns
+[2023-03-28 11:06:06,970] 169 root _ INFO _ Defining   exclude columns  for converting int datatype into float data type column
+[2023-03-28 11:06:06,970] 172 root _ INFO _  Converting into float columns of base, train and test datasets
+[2023-03-28 11:06:06,992] 179 root _ INFO _ Checking is required columns exist in both train and test datasets
+[2023-03-28 11:06:06,993] 51 root _ INFO _ Checking for is required columns are exists 
+[2023-03-28 11:06:06,993] 55 root _ INFO _ is missing columns are in then storing them into missing columns list
+[2023-03-28 11:06:06,993] 51 root _ INFO _ Checking for is required columns are exists 
+[2023-03-28 11:06:06,993] 55 root _ INFO _ is missing columns are in then storing them into missing columns list
+[2023-03-28 11:06:06,993] 183 root _ INFO _ Defining numerical columns 
+[2023-03-28 11:06:07,005] 188 root _ INFO _ defining categorica;l columns
+[2023-03-28 11:06:07,027] 195 root _ INFO _ As all column are available in train df hence detecting data drift for numerical and categorical columns
+[2023-03-28 11:06:07,027] 200 root _ INFO _ As all column are available in tests df hence detecting data driftfor numerical and categorical columns
+[2023-03-28 11:06:07,029] 208 root _ INFO _ preparing data validation artifact
+[2023-03-28 11:06:07,029] 211 root _ INFO _ retrurning data validation artifact
+[2023-03-28 11:06:07,053] 19 root _ INFO _ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-03-28 11:06:07,053] 58 root _ INFO _ reading training data set and converting column types into their respective data types
+[2023-03-28 11:06:07,391] 66 root _ INFO _ reading training data set and converting column types into their respective data types
+[2023-03-28 11:06:07,538] 74 root _ INFO _ Defining input for train and test datasets
+[2023-03-28 11:06:07,558] 78 root _ INFO _ Defining target colum for both train test dataset
+[2023-03-28 11:06:07,559] 82 root _ INFO _ Creating a transformation pipeline 
+[2023-03-28 11:06:07,559] 30 root _ INFO _ Creating a pipline using Custom function with function transformer
+[2023-03-28 11:06:07,560] 29 root _ INFO _ Creating a feature is transaction done in week or weekend
+[2023-03-28 11:06:11,229] 55 root _ INFO _ Creating a feature with treansaction done in day or night
+[2023-03-28 11:06:14,793] 93 root _ INFO _ Using Customer id feature creating three more features 
+[2023-03-28 11:06:44,883] 136 root _ INFO _ Using terminal id creating three more features
+[2023-03-28 11:08:00,012] 86 root _ INFO _ fit and transform pipeline for both train and test datasets
+[2023-03-28 11:08:00,012] 29 root _ INFO _ Creating a feature is transaction done in week or weekend
+[2023-03-28 11:08:03,680] 55 root _ INFO _ Creating a feature with treansaction done in day or night
+[2023-03-28 11:08:07,239] 93 root _ INFO _ Using Customer id feature creating three more features 
+[2023-03-28 11:08:37,032] 136 root _ INFO _ Using terminal id creating three more features
+[2023-03-28 11:09:52,821] 151 root _ INFO _ After performning Feature Engineering dropping some columns
+[2023-03-28 11:09:52,866] 29 root _ INFO _ Creating a feature is transaction done in week or weekend
+[2023-03-28 11:09:54,447] 55 root _ INFO _ Creating a feature with treansaction done in day or night
+[2023-03-28 11:09:55,968] 93 root _ INFO _ Using Customer id feature creating three more features 
+[2023-03-28 11:10:24,929] 136 root _ INFO _ Using terminal id creating three more features
+[2023-03-28 11:11:39,361] 151 root _ INFO _ After performning Feature Engineering dropping some columns
+[2023-03-28 11:11:39,379] 93 root _ INFO _ This data set has imbalance data so applying Sampling technique for train and test data 
+[2023-03-28 11:13:08,492] 97 root _ INFO _ Converting train and test data sets into numpy array to store
+[2023-03-28 11:13:08,560] 101 root _ INFO _ storing converted train arr into transformed train path
+[2023-03-28 11:13:08,613] 104 root _ INFO _ storing converted test arr into transformed train path
+[2023-03-28 11:13:08,636] 107 root _ INFO _ storing transormation pipeline in transformer path , to use in future
+[2023-03-28 11:13:08,638] 110 root _ INFO _ Preparing data transformation artifact
+[2023-03-28 11:13:08,638] 117 root _ INFO _ returning data transformation artifact
+[2023-03-28 11:13:08,674] 17 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL TRAINER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2023-03-28 11:13:08,674] 36 root _ INFO _ loading train arrayt and test array
+[2023-03-28 11:13:08,704] 48 root _ INFO _  spliting inputr and target features in both test and train array
+[2023-03-28 11:13:08,705] 54 root _ INFO _ train the modelk
+[2023-03-28 11:13:15,030] 57 root _ INFO _ calculating f1 score for train data
+[2023-03-28 11:13:15,256] 61 root _ INFO _ calculating f1 score for test data
+[2023-03-28 11:13:15,358] 66 root _ INFO _ f1_train_score:0.9999794175156942  and f1_test_score is : 0.906446479756592
+[2023-03-28 11:13:15,358] 69 root _ INFO _ checking our model is underfitting or overfitting or goood model
+[2023-03-28 11:13:15,359] 74 root _ INFO _ checking our model is overfitting or not
+[2023-03-28 11:13:15,359] 80 root _ INFO _ savinbg the model oibject 
+[2023-03-28 11:13:15,362] 83 root _ INFO _ preparing the model trainer artifact
+[2023-03-28 11:13:15,362] 87 root _ INFO _ model trainer artifact :ModelTrainerArtifact(model_path='/config/workspace/artifacts/28032023__110552/model_trainer/model/model.pkl', f1_train_score=0.9999794175156942, f1_test_score=0.906446479756592) 
+[2023-03-28 11:13:15,362] 22 root _ INFO _ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Model Evaluation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-03-28 11:13:15,362] 38 root _ INFO _ if saved model folder has model the we will compare which model is best trained or the model from saved model folder
+[2023-03-28 11:13:15,363] 49 root _ INFO _ Finding location of transformer model and target encoder
+[2023-03-28 11:13:15,363] 55 root _ INFO _ Previous trained objects of transformer, model and target encoder
+[2023-03-28 11:13:15,371] 64 root _ INFO _ Currently trained model objects
+[2023-03-28 11:13:15,536] 29 root _ INFO _ Creating a feature is transaction done in week or weekend
+[2023-03-28 11:13:17,120] 55 root _ INFO _ Creating a feature with treansaction done in day or night
+[2023-03-28 11:13:18,619] 93 root _ INFO _ Using Customer id feature creating three more features 
+[2023-03-28 11:13:47,418] 136 root _ INFO _ Using terminal id creating three more features
+[2023-03-28 11:15:01,742] 151 root _ INFO _ After performning Feature Engineering dropping some columns
+[2023-03-28 11:15:01,819] 88 root _ INFO _ Accuracy using previous trained model: 0.012244897959183673
+[2023-03-28 11:15:01,824] 29 root _ INFO _ Creating a feature is transaction done in week or weekend
+[2023-03-28 11:15:03,373] 55 root _ INFO _ Creating a feature with treansaction done in day or night
+[2023-03-28 11:15:04,914] 93 root _ INFO _ Using Customer id feature creating three more features 
+[2023-03-28 11:15:33,858] 136 root _ INFO _ Using terminal id creating three more features
+[2023-03-28 11:16:48,124] 151 root _ INFO _ After performning Feature Engineering dropping some columns
+[2023-03-28 11:16:48,200] 97 root _ INFO _ Accuracy using current trained model: 0.012815378454144972
+[2023-03-28 11:16:48,200] 104 root _ INFO _ Model eval artifact: ModelEvaluationArtifact(is_model_accepted=True, improved_accuracy=0.0005704804949612993)
+[2023-03-28 11:16:48,205] 20 root _ INFO _ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  MODEL PUSHER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[2023-03-28 11:16:48,205] 31 root _ INFO _ loading transformer and model
+[2023-03-28 11:16:48,206] 35 root _ INFO _ saving the model into pusher directory
+[2023-03-28 11:16:48,210] 40 root _ INFO _ saving the model in saved model directory
+[2023-03-28 11:16:48,214] 48 root _ INFO _ preparing model pusher artifact
+[2023-03-28 11:16:48,214] 52 root _ INFO _ model pusher artifact : ModelPusherArtifact(pusher_model_dir='/config/workspace/artifacts/28032023__110552/model_pusher/saved_models', saved_model_dir='saved_models')
