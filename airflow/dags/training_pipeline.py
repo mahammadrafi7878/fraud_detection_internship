@@ -8,7 +8,7 @@ from airflow.operators.python import PythonOperator
 
 
 with DAG(
-    'Fraud_Transaction_Detection',
+    'Fraud Transaction Detection',
     default_args={'retries': 2},
     # [END default_args]
     description='Fraud Transaction Detection',
